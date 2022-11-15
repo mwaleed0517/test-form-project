@@ -1,0 +1,37 @@
+<div fxLayout="row wrap" fxLayoutAlign="space-between start" class="form">
+    <form [formGroup]="theForm" fxFlex="100" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="10px"
+        style="margin-bottom: 20px;">
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" required  formControlName="first_name" autocomplete="off" />
+            <mat-error>Valid data field is required!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" required formControlName="last_name" autocomplete="off" />
+            <mat-error>Valid data field is required!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" required  formControlName="email" autocomplete="off" />
+            <mat-error>Valid email field is required!</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date_of_birth">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error>Valid date field is required!</mat-error>
+        </mat-form-field>
+    </form>
+
+    <button fxFlex="45" mat-raised-button style="background: #EB5757; color: #fff;" type="button"
+        (click)="onClose()">Close</button>
+
+    <button fxFlex="45" mat-raised-button style="background: #278ED4; color: #fff;" type="button" (click)="onSubmit()"
+        [disabled]="!theForm.valid">Submit </button>
+</div>
