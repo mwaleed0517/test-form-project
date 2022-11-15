@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form.component/form.component';
@@ -28,7 +29,8 @@ import { FormComponent } from './form.component/form.component';
         BrowserAnimationsModule,
         MatNativeDateModule,
         FlexLayoutModule,
-        MatInputModule
+        MatInputModule,
+        FormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
